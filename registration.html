@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Premium Butcher Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .registration-container {
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        .registration-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #dc2626, #000000, #dc2626);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: #dc2626;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-placeholder::after {
+            content: '🥩';
+            font-size: 28px;
+        }
+
+        .shop-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        .shop-tagline {
+            font-size: 14px;
+            color: #666666;
+            font-style: italic;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #dc2626;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e5e5;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #dc2626;
+            background-color: #fef2f2;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .register-btn {
+            width: 100%;
+            background-color: #dc2626;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .register-btn:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .register-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .login-link a {
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .login-link a:hover {
+            color: #b91c1c;
+            text-decoration: underline;
+        }
+
+        .success-message {
+            background-color: #f0fdf4;
+            border: 1px solid #22c55e;
+            color: #15803d;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .registration-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .form-title {
+                font-size: 24px;
+            }
+
+            .shop-name {
+                font-size: 20px;
+            }
+        }
+
+        /* Butcher-themed decorative elements */
+        .meat-pattern {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #dc2626;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="meat-pattern">🥩 🔪 🥩</div>
+        
+        <div class="logo-section">
+            <div class="logo-placeholder"></div>
+            <div class="shop-name">Premium Butcher</div>
+            <div class="shop-tagline">Quality Meats Since 1985</div>
+        </div>
+
+        <h1 class="form-title">Create Account</h1>
+
+        <div class="success-message" id="successMessage">
+            Registration successful! Welcome to Premium Butcher Shop.
+        </div>
+
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error-message" id="fullNameError">Please enter your full name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="passwordError">Password must be at least 8 characters long</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+            </div>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+
+        <div class="login-link">
+            <p>Already have an account? <a href="#" id="loginLink">Log in here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const inputs = form.querySelectorAll('input');
+            const successMessage = document.getElementById('successMessage');
+
+            // Real-time validation
+            inputs.forEach(input => {
+                input.addEventListener('blur', () => validateField(input));
+                input.addEventListener('input', () => clearError(input));
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                inputs.forEach(input => {
+                    if (!validateField(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    // Simulate successful registration
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to top to show success message
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }
+            });
+
+            // Login link click handler
+            document.getElementById('loginLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Redirecting to login page...');
+            });
+
+            function validateField(input) {
+                const value = input.value.trim();
+                const fieldName = input.name;
+                let isValid = true;
+
+                // Clear previous errors
+                clearError(input);
+
+                switch (fieldName) {
+                    case 'fullName':
+                        if (value.length < 2) {
+                            showError(input, 'fullNameError', 'Please enter your full name (at least 2 characters)');
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'email':
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(value)) {
+                            showError(input, 'emailError', 'Please enter a valid email address');
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'phone':
+                        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                        if (!phoneRegex.test(value.replace(/[\s\-$$$$]/g, ''))) {
+                            showError(input, 'phoneError', 'Please enter a valid phone number');
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'password':
+                        if (value.length < 8) {
+                            showError(input, 'passwordError', 'Password must be at least 8 characters long');
+                            isValid = false;
+                        }
+                        // Also validate confirm password if it has a value
+                        const confirmPassword = document.getElementById('confirmPassword');
+                        if (confirmPassword.value) {
+                            validateField(confirmPassword);
+                        }
+                        break;
+
+                    case 'confirmPassword':
+                        const password = document.getElementById('password').value;
+                        if (value !== password) {
+                            showError(input, 'confirmPasswordError', 'Passwords do not match');
+                            isValid = false;
+                        }
+                        break;
+                }
+
+                return isValid;
+            }
+
+            function showError(input, errorId, message) {
+                input.classList.add('error');
+                const errorElement = document.getElementById(errorId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+
+            function clearError(input) {
+                input.classList.remove('error');
+                const errorId = input.name + 'Error';
+                const errorElement = document.getElementById(errorId);
+                if (errorElement) {
+                    errorElement.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Cuts Butcher Shop - Premium Quality Meats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #dc2626;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #dc2626;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 300px;
+            margin: 0 1rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #dc2626;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-link {
+            color: #000;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .icon-link:hover {
+            color: #dc2626;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            text-align: center;
+            color: #fff;
+            background: rgba(0,0,0,0.6);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .shop-now-btn {
+            background-color: #dc2626;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: #dc2626;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-arrow:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #000;
+        }
+
+        /* Special Offers Section */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .offer-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc2626;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #dc2626;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .current-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #dc2626;
+        }
+
+        .original-price {
+            font-size: 1.1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #dc2626;
+            transform: translateY(-1px);
+        }
+
+        /* Best Sellers Section */
+        .bestsellers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #dc2626;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .search-container {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none;
+                margin: 1rem 0 0 0;
+            }
+
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+
+            .slide-content {
+                padding: 2rem;
+            }
+
+            .carousel-arrow {
+                display: none;
+            }
+
+            .offers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .bestsellers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                🥩 Prime Cuts
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-bar" id="searchBar" placeholder="Search products...">
+            </div>
+
+            <div class="header-icons">
+                <a href="#" class="icon-link">👤</a>
+                <a href="https://facebook.com" target="_blank" class="icon-link">📘</a>
+                <a href="https://twitter.com" target="_blank" class="icon-link">🐦</a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="carousel-container">
+            <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/placeholder.svg?height=500&width=1200')">
+                <div class="slide-content">
+                    <h2>Premium Ribeye Steaks</h2>
+                    <p>Hand-selected, dry-aged for 28 days. Experience the ultimate in flavor and tenderness.</p>
+                    <a href="#products" class="shop-now-btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/placeholder.svg?height=500&width=1200')">
+                <div class="slide-content">
+                    <h2>Fresh Ground Beef</h2>
+                    <p>Ground fresh daily from premium cuts. Perfect for burgers, meatballs, and family meals.</p>
+                    <a href="#products" class="shop-now-btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/placeholder.svg?height=500&width=1200')">
+                <div class="slide-content">
+                    <h2>Farm Fresh Poultry</h2>
+                    <p>Free-range chickens and turkeys from local farms. Hormone-free and naturally raised.</p>
+                    <a href="#products" class="shop-now-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-arrow prev" id="prevBtn">❮</button>
+        <button class="carousel-arrow next" id="nextBtn">❯</button>
+        
+        <div class="carousel-nav" id="carouselNav">
+            <div class="carousel-dot active" data-slide="0"></div>
+            <div class="carousel-dot" data-slide="1"></div>
+            <div class="carousel-dot" data-slide="2"></div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offers-grid" id="offersGrid">
+                <div class="offer-card product-item" data-name="wagyu beef tenderloin">
+                    <div class="offer-badge">30% OFF</div>
+                    <div class="product-image">🥩</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Wagyu Beef Tenderloin</h3>
+                        <p class="product-description">Premium A5 Wagyu beef, incredibly tender and marbled</p>
+                        <div class="price-container">
+                            <span class="current-price">$89.99/lb</span>
+                            <span class="original-price">$129.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Wagyu Beef Tenderloin', 89.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="offer-card product-item" data-name="lamb rack">
+                    <div class="offer-badge">25% OFF</div>
+                    <div class="product-image">🐑</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Lamb Rack</h3>
+                        <p class="product-description">French-trimmed rack of lamb, perfect for special occasions</p>
+                        <div class="price-container">
+                            <span class="current-price">$34.99/lb</span>
+                            <span class="original-price">$46.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Lamb Rack', 34.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="offer-card product-item" data-name="pork belly">
+                    <div class="offer-badge">20% OFF</div>
+                    <div class="product-image">🥓</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pork Belly</h3>
+                        <p class="product-description">Skin-on pork belly, perfect for crispy crackling</p>
+                        <div class="price-container">
+                            <span class="current-price">$12.99/lb</span>
+                            <span class="original-price">$16.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Pork Belly', 12.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="offer-card product-item" data-name="duck breast">
+                    <div class="offer-badge">15% OFF</div>
+                    <div class="product-image">🦆</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Duck Breast</h3>
+                        <p class="product-description">Premium duck breast with rich, gamey flavor</p>
+                        <div class="price-container">
+                            <span class="current-price">$24.99/lb</span>
+                            <span class="original-price">$29.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Duck Breast', 24.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="bestsellers-grid" id="bestsellersGrid">
+                <div class="product-card product-item" data-name="ribeye steak">
+                    <div class="product-image">🥩</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ribeye Steak</h3>
+                        <p class="product-description">Prime cut ribeye with excellent marbling and flavor</p>
+                        <div class="price-container">
+                            <span class="current-price">$28.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Ribeye Steak', 28.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card product-item" data-name="ground beef">
+                    <div class="product-image">🍖</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ground Beef (80/20)</h3>
+                        <p class="product-description">Fresh ground beef, perfect for burgers and meatballs</p>
+                        <div class="price-container">
+                            <span class="current-price">$8.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Ground Beef', 8.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card product-item" data-name="chicken breast">
+                    <div class="product-image">🐔</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Chicken Breast</h3>
+                        <p class="product-description">Boneless, skinless chicken breast from free-range chickens</p>
+                        <div class="price-container">
+                            <span class="current-price">$12.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Chicken Breast', 12.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card product-item" data-name="pork chops">
+                    <div class="product-image">🥩</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Bone-in Pork Chops</h3>
+                        <p class="product-description">Thick-cut pork chops with excellent flavor and tenderness</p>
+                        <div class="price-container">
+                            <span class="current-price">$14.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Pork Chops', 14.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card product-item" data-name="salmon fillet">
+                    <div class="product-image">🐟</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Atlantic Salmon Fillet</h3>
+                        <p class="product-description">Fresh Atlantic salmon, rich in omega-3 fatty acids</p>
+                        <div class="price-container">
+                            <span class="current-price">$22.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Salmon Fillet', 22.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card product-item" data-name="beef brisket">
+                    <div class="product-image">🥩</div>
+                    <div class="product-info">
+                        <h3 class="product-name">Beef Brisket</h3>
+                        <p class="product-description">Perfect for smoking and slow cooking, incredibly flavorful</p>
+                        <div class="price-container">
+                            <span class="current-price">$18.99/lb</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Beef Brisket', 18.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Prime Cuts</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Quality Promise</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>📍 123 Butcher Street, Meat City, MC 12345</li>
+                    <li>📧 info@primecuts.com</li>
+                    <li>📞 (555) 123-MEAT</li>
+                    <li>🕒 Mon-Sat: 8AM-8PM, Sun: 10AM-6PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Prime Cuts Butcher Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide functionality
+        setInterval(nextSlide, 5000);
+
+        // Navigation buttons
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Search functionality
+        const searchBar = document.getElementById('searchBar');
+        const productItems = document.querySelectorAll('.product-item');
+
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            productItems.forEach(item => {
+                const productName = item.getAttribute('data-name').toLowerCase();
+                const productCard = item.closest('.offer-card') || item.closest('.product-card');
+                
+                if (productName.includes(searchTerm)) {
+                    productCard.style.display = 'block';
+                } else {
+                    productCard.style.display = 'none';
+                }
+            });
+        });
+
+        // Add to Cart functionality
+        function addToCart(productName, price) {
+            console.log(`Added ${productName} ($${price}) to cart`);
+            alert(`${productName} has been added to your cart!`);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
