@@ -114,7 +114,7 @@
             }
             
             productGrid.innerHTML = productsToShow.map(product => `
-                <div class="product-card">
+                <div class="product-card" onclick="goToProductDetail(${product.id})">
                     <div class="product-image">${product.image}</div>
                     <div class="product-info">
                         <h3 class="product-name">${product.name}</h3>
@@ -128,6 +128,10 @@
             `).join('');
         }
 
+            function goToProductDetail(productId) {
+    // Redirige pasando el ID del producto como query param
+                window.location.href = `product-detail.html?id=${productId}`;
+            }
         function handleSearch() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             applyFilters();
