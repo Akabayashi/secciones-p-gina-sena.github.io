@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Ribeye Steak - Butcher Shop</title>
+    <title>Premium Ribeye Steak - El Rincón del Carnicero</title>
     <link rel="stylesheet" href="assets/css/produc-detail.css">
 </head>
 <body>
@@ -11,14 +11,14 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">Prime Cuts Butcher</div>
+                <div class="logo">El Rincón del Carnicero</div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="catalog.html">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#cart">Cart</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="catalog.html">Productos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="#cart">Carrito</a></li>
                     </ul>
                 </nav>
                 <div class="header-icons">
@@ -46,7 +46,7 @@
                     <div class="product-price">$32.99/lb</div>
                     
                     <div class="quantity-section">
-                        <label for="quantity">Quantity (lbs):</label>
+                        <label for="quantity">Cantidad (lbs):</label>
                         <div class="quantity-controls">
                             <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
                             <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
@@ -55,14 +55,14 @@
                     </div>
                     
                     <button class="add-to-cart-btn" onclick="addToCart()">
-                        Add to Cart - $<span id="total-price">32.99</span>
+                        Agregar al Carrito - $<span id="total-price">32.99</span>
                     </button>
                 </div>
             </section>
 
             <!-- Related Products -->
             <section class="related-products">
-                <h2>Related Products</h2>
+                <h2>Productos Relacionados</h2>
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-card-image">🥩</div>
@@ -89,47 +89,45 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About Us</h3>
+                    <h3>Sobre El Rincón del Carnicero</h3>
                     <ul>
-                        <li><a href="#story">Our Story</a></li>
-                        <li><a href="#quality">Quality Promise</a></li>
-                        <li><a href="#sourcing">Sourcing</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Nuestra Historia</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Customer Service</h3>
+                    <h3>Servicio al Cliente</h3>
                     <ul>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#">Politica de Privacidad</a></li>
+                        <li><a href="#">Terminos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect</h3>
+                    <h3>Contacto</h3>
                     <ul>
-                        <li><a href="#facebook">Facebook</a></li>
-                        <li><a href="#instagram">Instagram</a></li>
-                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li>📍 123 Butcher Street, Meat City, MC 12345</li>
+                        <li>📧 info@elrincon.com</li>
+                        <li>📞 (555) 123-MEAT</li>
+                        <li>🕒 Lun-Vie: 8AM-8PM, Dom: 10AM-6PM</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Prime Cuts Butcher. All rights reserved.</p>
+                <p>&copy; 2024 El Rincón del Carnicero. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cart Notification -->
     <div id="cart-notification" class="cart-notification">
-        Added to cart successfully!
+        Su producto se agrego al carrito!
     </div>
 
     <script src="assets/js/product-detail.js"></script>

@@ -121,7 +121,7 @@
                         <p class="product-description">${product.description}</p>
                         <div class="product-price">$${product.price.toFixed(2)}</div>
                         <button class="add-to-cart" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">
-                            Add to Cart
+                            Agregar al Carrito
                         </button>
                     </div>
                 </div>
