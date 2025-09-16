@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Cuts - Product Catalog</title>
+    <title>Catálogo - El Rincón del Carnicero</title>
     <link rel="stylesheet" href="assets/css/catalog.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="logo">🥩 Premium Cuts</div>
+            <div class="logo">🥩 El Rincón del Carnicero</div>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="catalog.html">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#cart">Cart (0)</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Productos</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#cart">Carrito (0)</a></li>
                 </ul>
                 <button class="mobile-menu-btn">☰</button>
             </nav>
@@ -31,19 +31,19 @@
     <main class="main-container">
         <!-- Search Section -->
         <div class="search-section">
-            <input type="text" class="search-bar" id="searchInput" placeholder="Search for meat products...">
+            <input type="text" class="search-bar" id="searchInput" placeholder="Buscar Productos...">
         </div>
 
         <!-- Mobile Sidebar Toggle -->
-        <button class="sidebar-toggle" onclick="toggleSidebar()">Filters & Categories</button>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">Filtros y Categorías</button>
 
         <!-- Sidebar Filters -->
         <aside class="sidebar" id="sidebar">
             <button class="sidebar-close" onclick="toggleSidebar()" style="display: none;">×</button>
-            <h3>Filters</h3>
+            <h3>Filtros</h3>
             
             <div class="filter-section">
-                <h4>Price Range</h4>
+                <h4>Rango de Precios</h4>
                 <div class="price-inputs">
                     <input type="number" class="price-input" id="minPrice" placeholder="Min $" min="0">
                     <input type="number" class="price-input" id="maxPrice" placeholder="Max $" min="0">
@@ -51,28 +51,28 @@
             </div>
 
             <div class="filter-section">
-                <h4>Meat Categories</h4>
+                <h4>Categorías de Carne</h4>
                 <div class="checkbox-group">
                     <label class="checkbox-item">
                         <input type="checkbox" value="beef" class="category-filter">
-                        <span>Beef</span>
+                        <span>Res</span>
                     </label>
                     <label class="checkbox-item">
                         <input type="checkbox" value="pork" class="category-filter">
-                        <span>Pork</span>
+                        <span>Cerdo</span>
                     </label>
                     <label class="checkbox-item">
                         <input type="checkbox" value="chicken" class="category-filter">
-                        <span>Chicken</span>
+                        <span>Pollo</span>
                     </label>
                     <label class="checkbox-item">
                         <input type="checkbox" value="fish" class="category-filter">
-                        <span>Fish</span>
+                        <span>Pescado</span>
                     </label>
                 </div>
             </div>
 
-            <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
+            <button class="clear-filters" onclick="clearAllFilters()">Limpiar Todos los Filtros</button>
         </aside>
 
         <!-- Product Grid -->
@@ -86,42 +86,38 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>About Premium Cuts</h4>
+                    <h4>Sobre El Rincón del Carnicero</h4>
                     <ul>
-                        <li><a href="#about">Our Story</a></li>
-                        <li><a href="#quality">Quality Promise</a></li>
-                        <li><a href="#sourcing">Sourcing</a></li>
-                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Nuestra Historia</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Customer Service</h4>
+                    <h4>Servicio al Cliente</h4>
                     <ul>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#">Politica de Privacidad</a></li>
+                        <li><a href="#">Terminos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>Contacto</h4>
                     <ul>
-                        <li><a href="#newsletter">Newsletter</a></li>
-                        <li><a href="#social">Social Media</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li>📍 123 Butcher Street, Meat City, MC 12345</li>
+                        <li>📧 info@elrincon.com</li>
+                        <li>📞 (555) 123-MEAT</li>
+                        <li>🕒 Lun-Vie: 8AM-8PM, Dom: 10AM-6PM</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Premium Cuts. All rights reserved.</p>
+                <p>&copy; 2024 El Rincón del Carnicero. All rights reserved.</p>
             </div>
         </div>
     </footer>
