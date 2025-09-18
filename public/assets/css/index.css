@@ -1,3 +1,7 @@
+        :root {
+            --header-height: 101.1px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +17,7 @@
 
         /* Header Styles */
         .header {
-            background-color: #fff;
+            background-color: black;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
@@ -24,13 +28,12 @@
         }
 
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
             gap: 1rem;
         }
 
@@ -41,19 +44,47 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            text-align: center;
+            margin-left: 0.5%;
             gap: 0.5rem;
+        }
+
+        .logo-emoji {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .logo-line {
+            display: block;
+        }
+
+        .center-section {
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+            justify-content: center;
+            margin-left: -30px;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
         .nav-menu a {
             text-decoration: none;
-            color: #000;
+            color: white;
             font-weight: 500;
             transition: color 0.3s ease;
         }
@@ -65,7 +96,7 @@
         .search-container {
             position: relative;
             flex: 1;
-            max-width: 300px;
+            max-width: 550px;
             margin: 0 1rem;
         }
 
@@ -87,10 +118,11 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-left: auto;
         }
 
         .icon-link {
-            color: #000;
+            color: white;
             font-size: 1.2rem;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -116,7 +148,7 @@
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
+            margin-top: var(--header-height);
             position: relative;
             height: 500px;
             overflow: hidden;

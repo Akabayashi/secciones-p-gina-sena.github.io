@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - El Rincón del Carnicero</title>
+    <script src="https://kit.fontawesome.com/6fe8a98e55.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/catalog.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="logo">🥩 El Rincón del Carnicero</div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
+            <a href="index.html" class="logo">
+                <span class="logo-emoji">🥩</span>
+                <span class="logo-text">
+                    <span class="logo-line">El Rincón del</span>
+                    <span class="logo-line">Carnicero</span>
+                </span>
+            </a>
+            
+            <div class="center-section">
+                <nav class="nav-menu" id="navMenu">
                     <li><a href="catalog.html">Productos</a></li>
-                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#about">Sobre nosotros</a></li>
                     <li><a href="#contact">Contacto</a></li>
-                    <li><a href="#cart">Carrito (0)</a></li>
-                </ul>
-                <button class="mobile-menu-btn">☰</button>
-            </nav>
+                </nav>
+                <div class="search-container">
+                    <input type="text" class="search-bar" id="searchInput" placeholder="Buscar productos...">
+                </div>
+            </div>
+
             <div class="header-icons">
-                <a href="registration.html" class="icon-link">👤</a>
+                <a href="registration.html" class="icon-link"> <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i> </a>
+                <a href="#" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
+
     <!-- Main Content -->
     <main class="main-container">
-        <!-- Search Section -->
-        <div class="search-section">
-            <input type="text" class="search-bar" id="searchInput" placeholder="Buscar Productos...">
-        </div>
 
         <!-- Mobile Sidebar Toggle -->
         <button class="sidebar-toggle" onclick="toggleSidebar()">Filtros y Categorías</button>
