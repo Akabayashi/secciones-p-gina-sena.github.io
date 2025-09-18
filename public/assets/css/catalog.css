@@ -343,7 +343,16 @@
         }
 
         .footer-section ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
             margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li i {
+            flex-shrink: 0;
+            line-height: 1.5;
+            transform: translateY(1px);
         }
 
         .footer-section ul li a {
