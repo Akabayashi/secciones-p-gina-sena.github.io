@@ -1,3 +1,7 @@
+        :root {
+            --header-height: 101px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -9,6 +13,7 @@
             line-height: 1.6;
             color: #000;
             background-color: #fff;
+            padding-top: var(--header-height);
         }
 
         .container {
@@ -17,51 +22,153 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: #fff;
-            border-bottom: 2px solid #dc2626;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .main {
+            padding: 3rem 0;
         }
 
-        .header-content {
+        .product-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+        }
+}
+
+        /* Header Styles */
+        .header {
+            background-color: black;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #dc2626;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-left: 0.5%;
+            gap: 0.5rem;
         }
 
-        .logo::before {
-            content: "🥩";
-            margin-right: 0.5rem;
-            font-size: 2rem;
+        .logo-emoji {
+            font-size: 3rem;
+            line-height: 1;
         }
 
-        nav ul {
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .logo-line {
+            display: block;
+        }
+
+        .center-section {
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+            justify-content: center;
+            margin-left: -30px;
+        }
+
+        .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            align-items: center;
         }
 
-        nav a {
+        .nav-menu a {
             text-decoration: none;
-            color: #000;
+            color: white;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
+        .nav-menu a:hover {
             color: #dc2626;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 550px;
+            margin: 0 1rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #dc2626;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: auto;
+        }
+
+        .icon-link {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .icon-link:hover {
+            color: #dc2626;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            transition: 0.3s;
         }
 
         /* Main Content */
@@ -300,7 +407,7 @@
         .cart-notification {
             position: fixed;
             top: 20px;
-            right: 20px;
+            right: -300px;
             background: #dc2626;
             color: white;
             padding: 1rem 2rem;
@@ -312,5 +419,5 @@
         }
 
         .cart-notification.show {
-            transform: translateX(0);
+            right: 300px;
         }

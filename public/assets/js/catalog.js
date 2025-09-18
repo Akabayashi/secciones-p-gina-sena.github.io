@@ -1,3 +1,4 @@
+
         // Sample product data
         const products = [
             {
