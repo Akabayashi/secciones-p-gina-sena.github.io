@@ -3,83 +3,83 @@
         const products = [
             {
                 id: 1,
-                name: "Premium Ribeye Steak",
-                description: "Marbled perfection, aged 28 days for ultimate tenderness",
+                name: "Filete de Costilla Premium",
+                description: "Perfección marmolada, añejada durante 28 días para una ternura máxima.",
                 price: 32.99,
                 category: "beef",
-                image: "🥩"
+                image: "<img src= '/public/assets/img/imgRes/Filete_de_Costilla.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 2,
-                name: "Free-Range Chicken Breast",
-                description: "Organic, hormone-free chicken breast fillets",
+                name: "Pechuga de pollo de corral",
+                description: "Filetes de pechuga de pollo orgánicos y sin hormonas.",
                 price: 12.99,
                 category: "chicken",
-                image: "🐔"
+                image: "<img src= '/public/assets/img/imgPollo/Filete_de_Pechga.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 3,
-                name: "Wild Atlantic Salmon",
-                description: "Fresh caught, sustainably sourced salmon fillets",
+                name: "Salmón Salvaje Atlántico ",
+                description: "Filetes de salmón recién capturados y de origen sostenible.",
                 price: 24.99,
                 category: "fish",
-                image: "🐟"
+                image: "<img src= '/public/assets/img/imgPescado/filete_de_trucha.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 4,
-                name: "Heritage Pork Chops",
-                description: "Thick-cut, bone-in pork chops from heritage breeds",
+                name: "Chuletas de Cerdo Tradicionales",
+                description: "Chuletas de cerdo de corte grueso y con hueso de razas tradicionales.",
                 price: 18.99,
                 category: "pork",
-                image: "🐷"
+                image: "<img src= '/public/assets/img/imgCerdo/Chuleta_Tradicional.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 5,
-                name: "Wagyu Ground Beef",
-                description: "Premium ground beef from authentic Wagyu cattle",
+                name: "Carne molida de Wagyu",
+                description: "Carne molida de primera calidad de auténtico ganado Wagyu.",
                 price: 28.99,
                 category: "beef",
-                image: "🥩"
+                image: "<img src= '/public/assets/img/imgRes/Carne5.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 6,
-                name: "Organic Turkey Breast",
-                description: "Farm-raised organic turkey breast, perfect for roasting",
+                name: "Pechuga De Pavo Orgánica",
+                description: "Pechuga de pavo orgánica criada en granja, perfecta para asar.",
                 price: 16.99,
                 category: "chicken",
-                image: "🦃"
+                image: "<img src= '/public/assets/img/imgPollo/Pechga_de_Pavo.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 7,
-                name: "Fresh Tuna Steaks",
-                description: "Sushi-grade yellowfin tuna steaks",
+                name: "Filetes de Atún Fresco",
+                description: "Filetes de aleta de atún amarilla de calidad para sushi.",
                 price: 29.99,
                 category: "fish",
-                image: "🐟"
+                image: "<img src= '/public/assets/img/imgPescado/Filete_de_Atun.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 8,
-                name: "Bacon-Wrapped Filet",
-                description: "Tender filet mignon wrapped in premium bacon",
+                name: "Filete Envuelto en Tocino",
+                description: "Tierno filete mignon envuelto en tocino de primera calidad.",
                 price: 42.99,
                 category: "beef",
-                image: "🥩"
+                image: "<img src= '/public/assets/img/imgRes/Filete_envuelto_tocino.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 9,
-                name: "BBQ Pork Ribs",
-                description: "St. Louis style pork ribs, perfect for grilling",
+                name: "Costillas de Cerdo a la Barbacoa",
+                description: "Costillas de cerdo al estilo San Luis, perfectas para asar a la parrilla.",
                 price: 22.99,
                 category: "pork",
-                image: "🐷"
+                image: "<img src= '/public/assets/img/imgCerdo/Costillas_a_La_Barbacoa.png' height = '200px' width = '400px'/>"
             },
             {
                 id: 10,
-                name: "Lobster Tails",
-                description: "Cold water lobster tails, flash frozen for freshness",
+                name: "Colas de Langosta",
+                description: "Colas de langosta de agua fría, congeladas rápidamente para mayor frescura.",
                 price: 34.99,
                 category: "fish",
-                image: "🦞"
+                image: "<img src= '/public/assets/img/imgPescado/Cola_de_Langosta.png' height = '200px' width = '400px'/>"
             }
         ];
 
