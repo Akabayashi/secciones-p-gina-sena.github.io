@@ -1,6 +1,6 @@
         const quantityInput = document.getElementById('quantity');
         const totalPriceSpan = document.getElementById('total-price');
-        const basePrice = 32.99;
+        const basePrice = 32990;
 
         function updateTotalPrice() {
             const quantity = parseInt(quantityInput.value);

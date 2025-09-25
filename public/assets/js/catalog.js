@@ -5,7 +5,7 @@
                 id: 1,
                 name: "Filete de Costilla Premium",
                 description: "Perfección marmolada, añejada durante 28 días para una ternura máxima.",
-                price: 32.99,
+                price: 32990,
                 category: "beef",
                 image: "<img src= '/public/assets/img/imgRes/Filete_de_Costilla.png' height = '200px' width = '400px'/>"
             },
@@ -13,7 +13,7 @@
                 id: 2,
                 name: "Pechuga de pollo de corral",
                 description: "Filetes de pechuga de pollo orgánicos y sin hormonas.",
-                price: 12.99,
+                price: 12990,
                 category: "chicken",
                 image: "<img src= '/public/assets/img/imgPollo/Filete_de_Pechga.png' height = '200px' width = '400px'/>"
             },
@@ -21,7 +21,7 @@
                 id: 3,
                 name: "Salmón Salvaje Atlántico ",
                 description: "Filetes de salmón recién capturados y de origen sostenible.",
-                price: 24.99,
+                price: 33450,
                 category: "fish",
                 image: "<img src= '/public/assets/img/imgPescado/filete_de_trucha.png' height = '200px' width = '400px'/>"
             },
@@ -29,7 +29,7 @@
                 id: 4,
                 name: "Chuletas de Cerdo Tradicionales",
                 description: "Chuletas de cerdo de corte grueso y con hueso de razas tradicionales.",
-                price: 18.99,
+                price: 18990,
                 category: "pork",
                 image: "<img src= '/public/assets/img/imgCerdo/Chuleta_Tradicional.png' height = '200px' width = '400px'/>"
             },
@@ -37,7 +37,7 @@
                 id: 5,
                 name: "Carne molida de Wagyu",
                 description: "Carne molida de primera calidad de auténtico ganado Wagyu.",
-                price: 28.99,
+                price: 28990,
                 category: "beef",
                 image: "<img src= '/public/assets/img/imgRes/Carne5.png' height = '200px' width = '400px'/>"
             },
@@ -45,7 +45,7 @@
                 id: 6,
                 name: "Pechuga De Pavo Orgánica",
                 description: "Pechuga de pavo orgánica criada en granja, perfecta para asar.",
-                price: 16.99,
+                price: 16990,
                 category: "chicken",
                 image: "<img src= '/public/assets/img/imgPollo/Pechga_de_Pavo.png' height = '200px' width = '400px'/>"
             },
@@ -53,7 +53,7 @@
                 id: 7,
                 name: "Filetes de Atún Fresco",
                 description: "Filetes de aleta de atún amarilla de calidad para sushi.",
-                price: 29.99,
+                price: 29990,
                 category: "fish",
                 image: "<img src= '/public/assets/img/imgPescado/Filete_de_Atun.png' height = '200px' width = '400px'/>"
             },
@@ -61,7 +61,7 @@
                 id: 8,
                 name: "Filete Envuelto en Tocino",
                 description: "Tierno filete mignon envuelto en tocino de primera calidad.",
-                price: 42.99,
+                price: 42990,
                 category: "beef",
                 image: "<img src= '/public/assets/img/imgRes/Filete_envuelto_tocino.png' height = '200px' width = '400px'/>"
             },
@@ -69,7 +69,7 @@
                 id: 9,
                 name: "Costillas de Cerdo a la Barbacoa",
                 description: "Costillas de cerdo al estilo San Luis, perfectas para asar a la parrilla.",
-                price: 22.99,
+                price: 22990,
                 category: "pork",
                 image: "<img src= '/public/assets/img/imgCerdo/Costillas_a_La_Barbacoa.png' height = '200px' width = '400px'/>"
             },
@@ -77,7 +77,7 @@
                 id: 10,
                 name: "Colas de Langosta",
                 description: "Colas de langosta de agua fría, congeladas rápidamente para mayor frescura.",
-                price: 34.99,
+                price: 34990,
                 category: "fish",
                 image: "<img src= '/public/assets/img/imgPescado/Cola_de_Langosta.png' height = '200px' width = '400px'/>"
             }
